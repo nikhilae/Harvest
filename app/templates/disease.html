@@ -1,0 +1,103 @@
+{% extends 'layout.html' %} {% block body %}
+
+
+<style>
+  html body {
+    background-image: url('https://storage.googleapis.com/kaggle-competitions/kaggle/5408/media/bigleaves.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+
+    font-family: 'Karla', sans-serif;
+    
+  }
+  [type="file"] {
+    height: 0;
+    overflow: hidden;
+    width: 0;
+    font-family: 'Karla', sans-serif;
+  }
+  
+  [type="file"] + label {
+    background: #f15d22;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+      font-family: 'Rubik', sans-serif;
+      font-size: inherit;
+    font-weight: 500;
+    margin-bottom: 1rem;
+    outline: none;
+    padding: 1rem 50px;
+    position: relative;
+    transition: all 0.3s;
+    vertical-align: middle;
+    
+    &:hover {
+      background-color: darken(#f15d22, 10%);
+    }
+    
+    &.btn-1 {
+      background-color: #f79159;
+      box-shadow: 0 6px darken(#f79159, 10%);
+      transition: none;
+  
+      &:hover {
+        box-shadow: 0 4px darken(#f79159, 10%);
+        top: 2px;
+      }
+    }
+    
+</style>
+<br /><br />
+<center>
+<div class="bg" style= "background-color: #eefdc7b8;
+width: 720px;
+height: 720px;
+padding: 120px;
+border-radius: 25px;" >
+    
+   
+    <h2 style="text-align: center; margin: 0px; color: black">
+    <b>Find out which disease has been caught by your plant</b>  </h2>
+    <div>
+
+  <form class="form-signin" method=post enctype=multipart/form-data>
+
+    <h2 class="h4 mb-3 font-weight-normal"><b>Please Upload The Image</b></h2>
+    
+  <input type="file" id="file" name="file" onchange="preview_image(event)" />
+  <label for="file" />Choose a File</label>
+  <br>
+  <img id="output-image" class="rounded mx-auto d-block" style="border-radius: 15px;width: 50%;height: 50%;"
+    <br>
+    <br><br><br>    
+    <button class="btn btn-lg btn-primary btn-block" type="submit" style="font-weight: bold;
+    font-family: 'Karla', sans-serif;
+    border-radius: 15px;
+    padding: 25px;
+    width: 300px;
+    font-size: 30px;
+    color: white;">Predict</button>
+
+  </centre>
+  </form>
+</div>
+</div>
+<br><br>
+
+<script type="text/javascript">
+  function preview_image(event) {
+    var reader = new FileReader();
+    reader.onload = function () {
+      var output = document.getElementById('output-image')
+      output.src = reader.result;
+    }
+    reader.readAsDataURL(event.target.files[0]);
+  }
+</script>
+
+</div>
+{% endblock %}

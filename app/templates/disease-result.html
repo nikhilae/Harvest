@@ -1,0 +1,26 @@
+
+{% extends 'layout.html' %} {% block body %}
+<style>
+    html body {
+        background-image: url('https://storage.googleapis.com/kaggle-competitions/kaggle/5408/media/bigleaves.jpg');
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+    
+        font-family: 'Karla', sans-serif;
+        
+      }
+</style>
+<center>
+<div class="bg" style= "background-color: #eefdc7b8;
+width: 700px;
+height: auto;
+padding: 50px;
+border-radius: 25px;" >
+<img src="{{outp}}" alt="Leaf Image" style="border-radius: 15px;">>
+            <p class="text-center" style="color: black; font-size: 22px;">{{ prediction }}<br></p>
+   
+            <br>
+</div>
+</center><br><br>
+{% endblock %}
